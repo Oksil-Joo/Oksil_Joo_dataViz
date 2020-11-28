@@ -7,10 +7,10 @@ from random import randint
 choices = ["rock", "paper", "scissors"]
 
 
-player_lives = 5
-AI_lives = 5
+player_lives = 1
+AI_lives = 1
 
-total_lives = 5
+total_lives = 1
 
 # this is the player choice
 # player = input("choose rock, paper or scissors: ")
@@ -19,9 +19,19 @@ total_lives = 5
 player = False
 
 while player is False:
-	
+	print("=====================*/ RPS GAME /*======================")
+	print("computer Lives:", AI_lives, "/", total_lives)
+	print("player Lives:", player_lives, "/", total_lives)
+	print("=========================================================")
+
+	print("Choose your weapon! or type quit to exit\n") #\n means "new line"
 	# this is the player choice
-	player = input("choose rock, paper or scissors: ")
+	player = input("choose rock, paper or scissors: \n")
+
+	# if the player chose to quit, then exit the game
+	if player == "quit":
+		print("you chose to quit")
+		exit()
 
 	# player = true -> it has a value (rock, paper, or scissors)
 
@@ -49,7 +59,7 @@ while player is False:
 			AI_lives -= 1
 
 	elif (computer == "paper"):
-		if (player == "scissors"):
+		if (player == "rock"):
 			print("you lose!")
 			player_lives -= 1
 		else:
@@ -63,9 +73,50 @@ while player is False:
 		else:
 			print("you win")
 			AI_lives -= 1
+	
+	if player_lives == 0:
+		print("You lose! Would you like to play again?")
+		choice = input("Y / N? ")
 
-	print("player lives:", player_lives, "lives left")
-	print("AI lives:", AI_lives, "Lives left")
+		if choice == "N" or choice == "n":
+			print("You chose to quit! Better luck next time!")
+			exit()
+
+		elif choice == "Y" or choice == "y":
+			# reset the player lives and the AI Lives
+			# and set player to False so that our loop will restart
+			player_lives = 1
+			AI_lives = 1
+			player = False
+
+		else:
+			print("Make a valid choice - Y or N")
+			#this will generate a bug that we need to fix later
+			choice = input("Y / N: ")
+
+	if AI_lives == 0:
+		print("You won! Would you like to play again?")
+		choice = input("Y / N? ")
+
+		if choice == "N" or choice == "n":
+			print("You choose to quit! Better luck next time!")
+			exit()
+
+		elif choice == "Y" or choice == "y":
+			# reset the player lives and the AI Lives
+			# and set player to False so that our loop will restart
+			player_lives = 1
+			AI_lives = 1
+			player = False
+
+		else:
+			print("Make a valid choice - Y or N")
+			#this will generate a bug that we need to fix later
+			choice = input("Y / N: ")
+
+
+	print("player has:", player_lives, "lives left")
+	print("AI has:", AI_lives, "Lives left")
 
 	# make the loop keep running by setting player back to False
 	# unset, so that our loop condition above will evaluate to True
