@@ -1,6 +1,6 @@
 # Rock Paper Scissors in Python!
 
-## Pick your weapon and play against the computer - you'll only get a virtual sting if you lose!
+<strong>Pick your weapon and play against the computer - you'll only get a virtual sting if you lose!</strong>
 
 Prerequisites: All you need is [Python 3](https://www.python.org/) to play.
 
@@ -10,7 +10,7 @@ The rules are the same as the classic game:
 1. paper covers Rock
 2. Scissors cuts Paper 3.Rock samshes Scissors
 
-Choose you weapon wisely!
+*Choose you weapon wisely!*
 
 The computer choose first, just follow the prompts.
 
