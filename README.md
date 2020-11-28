@@ -16,7 +16,8 @@ The computer choose first, just follow the prompts.
 
 Built with [Python 3](https://www.python.org/)
 
-##LICENSE
+## LICENSE
+
 MIT License
 Copyright (c) 2020 Oksil-Joo
 
