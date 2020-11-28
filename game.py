@@ -7,8 +7,10 @@ from gameComponents import gameVars, winLose
 # set up our game loop
 while gameVars.player is False:
 	print("=====================*/ RPS GAME /*======================")
+	print("---------------------------------------------------------")
 	print("Computer Lives:", gameVars.computer_lives, "/", gameVars.total_lives)
 	print("gameVars.player Lives:", gameVars.player_lives, "/", gameVars.total_lives)
+	print("---------------------------------------------------------")
 	print("=========================================================")
 
 	print("Choose your weapon! or type quit to exit\n") #\n means "new line"
