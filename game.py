@@ -6,52 +6,67 @@ from random import randint
 # The index alwyas starts at 0
 choices = ["rock", "paper", "scissors"]
 
+
 player_lives = 5
 AI_lives = 5
 
 total_lives = 5
 
-#this is the player choice
-player = input("choose rock, paper or scissors: ")
+# this is the player choice
+# player = input("choose rock, paper or scissors: ")
 
-# this will be the AI choice -> a random pick from the choices array
-computer = choices[randint(0, 2)]
+# True and false are Boolean data types -> they are the equivalent of on or off, 1 or 0
+player = False
 
-# check to see what the user input
+while player is False:
+	
+	# this is the player choice
+	player = input("choose rock, paper or scissors: ")
 
-#print outputs whatever is in the round brackets -> in this case it outputs player to the command prompt window
-print("user chose: " + player)
+	# player = true -> it has a value (rock, paper, or scissors)
 
-#validate that the random choice worked for the AI
-print("AI chose: " + computer)
+	# this will be the AI choice -> a random pick from the choices array
+	computer = choices[randint(0, 2)]
 
-if (computer == player):
-	print("tie")
+	# check to see what the user input
 
-# always check for negative conditions first (the losing case)
-elif(computer == "rock"):
-	if(player == "scissors"):
-		print("you lose!")
-		player_lives -= 1
-	else:
-		print("you win!")
-		AI_lives -= 1
+	# print outputs whatever is in the round brackets -> in this case it outputs player to the command prompt window
+	print("user chose: " + player)
 
-elif (computer == "paper"):
-	if (player == "scissors"):
-		print("you lose!")
-		player_lives -= 1
-	else:
-		print("you win!")
-		AI_lives -= 1
+	# validate that the random choice worked for the AI
+	print("AI chose: " + computer)
 
-elif (computer == "scissors"):
-	if (player == "paper"):
-		print("you lose!")
-		player_lives -= 1
-	else:
-		print("you win")
-		AI_lives -= 1
-print("player lives:", player_lives)
-print("AI lives:", AI_lives)
+	if (computer == player):
+		print("tie")
 
+	# always check for negative conditions first (the losing case)
+	elif(computer == "rock"):
+		if(player == "scissors"):
+			print("you lose!")
+			player_lives -= 1
+		else:
+			print("you win!")
+			AI_lives -= 1
+
+	elif (computer == "paper"):
+		if (player == "scissors"):
+			print("you lose!")
+			player_lives -= 1
+		else:
+			print("you win!")
+			AI_lives -= 1
+
+	elif (computer == "scissors"):
+		if (player == "paper"):
+			print("you lose!")
+			player_lives -= 1
+		else:
+			print("you win")
+			AI_lives -= 1
+
+	print("player lives:", player_lives, "lives left")
+	print("AI lives:", AI_lives, "Lives left")
+
+	# make the loop keep running by setting player back to False
+	# unset, so that our loop condition above will evaluate to True
+	player = False
